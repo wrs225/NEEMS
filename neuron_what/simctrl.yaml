@@ -1,0 +1,26 @@
+analog_probes:
+    i_in_probe:
+        abspath:    'tb_i.I_in'
+        range:       1
+    v_out_probe:
+        abspath:    'tb_i.V_out'
+        range:      10
+    v_out_exp_probe:
+        abspath:    'tb_i.V_exp_out'
+        range:      1
+    v_out_lin_probe:
+        abspath:    'tb_i.V_out_lin'
+        range:      10
+    v_out_i_probe:
+        abspath:    'tb_i.V_out_I'
+        range:      10
+    v_out_i_mult_probe:
+        abspath:    'tb_i.V_out_I_mult'
+        range:      10
+    dv_out_probe:
+        abspath:    'tb_i.dv_out'
+        range:      1
+digital_probes:
+    digital_sel_probe:
+        abspath:    'tb_i.digital_sel_out'
+        width:      1

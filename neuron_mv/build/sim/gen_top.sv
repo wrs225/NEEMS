@@ -28,13 +28,13 @@ logic [64  - 1:0] emu_time_vio;
 
 // Declaration of probe signals
 logic digital_sel_probe;
-`MAKE_GENERIC_REAL(i_in_probe, 6e-06, 25);
-`MAKE_GENERIC_REAL(v_out_probe, 1000, 25);
-`MAKE_GENERIC_REAL(v_out_exp_probe, 1e-07, 25);
-`MAKE_GENERIC_REAL(v_out_lin_probe, 1000, 25);
-`MAKE_GENERIC_REAL(v_out_i_probe, 1000, 25);
-`MAKE_GENERIC_REAL(v_out_i_mult_probe, 1000, 25);
-`MAKE_GENERIC_REAL(dv_out_probe, 1e-07, 25);
+`MAKE_GENERIC_REAL(i_in_probe, 6e-06, 200);
+`MAKE_GENERIC_REAL(v_out_probe, 1000, 200);
+`MAKE_GENERIC_REAL(v_out_exp_probe, 3e-13, 200);
+`MAKE_GENERIC_REAL(v_out_lin_probe, 1000, 200);
+`MAKE_GENERIC_REAL(v_out_i_probe, 1000, 200);
+`MAKE_GENERIC_REAL(v_out_i_mult_probe, 1000, 200);
+`MAKE_GENERIC_REAL(dv_out_probe, 1e-07, 200);
 logic [64  - 1:0] emu_time;
 logic emu_dec_cmp;
 

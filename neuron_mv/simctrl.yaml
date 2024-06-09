@@ -7,7 +7,7 @@ analog_probes:
         range:      1000
     v_out_exp_probe:
         abspath:    'tb_i.V_exp_out'
-        range:      0.0000001
+        range:      0.00000000000030
     v_out_lin_probe:
         abspath:    'tb_i.V_out_lin'
         range:      1000
