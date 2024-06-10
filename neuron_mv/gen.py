@@ -21,30 +21,29 @@ class NeuronModel(MixedSignalModel):
         g_soma = 314e-12  # S
         c_soma = 3.14e-12  # F
         EL = -70.6  # mV
-        VT = -50.4  # mV
+        VT = -70.6  # mV
 
         DeltaT = 2.0  # mV
 
-        #Vcut = VT + 6 * DeltaT  # mV
-        Vcut = VT + 6 * DeltaT  # mV
+        # Vcut = VT + 6 * DeltaT  # mV
+        Vcut = -50.4 + 6 * DeltaT  # mV
 
         def exp_approx(x):
             # Use integer arithmetic to avoid division by variables
             term1 = x
             term2 = (x * x) / 2
             term3 = (x * x * x) / 6
-            #term4 = (x * x * x * x) / 24
-            #term5 = (x * x * x * x * x) / 120
-            #term6 = (x * x * x * x * x * x) / 720
-            #term7 = (x * x * x * x * x * x * x) / 5040
-            #term8 = (x * x * x * x * x * x * x * x) / 40320
-            #term9 = (x * x * x * x * x * x * x * x * x) / 362880
-
-
-
+            # term4 = (x * x * x * x) / 24
+            # term5 = (x * x * x * x * x) / 120
+            # term6 = (x * x * x * x * x * x) / 720
+            # term7 = (x * x * x * x * x * x * x) / 5040
+            # term8 = (x * x * x * x * x * x * x * x) / 40320
+            # term9 = (x * x * x * x * x * x * x * x * x) / 362880
 
             # Sum the terms to approximate e^x
-            result = 1 + term1 + term2# + term3# + term4 + term5# + term6 + term7 + term8 + term9 
+            result = (
+                1 + term1 + term2
+            )  # + term3# + term4 + term5# + term6 + term7 + term8 + term9
             return result
 
         super().__init__(name, dt=dt)
@@ -68,12 +67,18 @@ class NeuronModel(MixedSignalModel):
         dt_eq = (
             dt
             / c_soma
-            * (g_soma * (EL - V_out_st) + g_soma * DeltaT*exp_approx((V_out_st - VT) / DeltaT) + I_in)
+            * (
+                g_soma * (EL - V_out_st)
+                + g_soma * DeltaT * exp_approx((V_out_st - VT) / DeltaT)
+                + I_in
+            )
         )
 
         self.set_this_cycle(V_out, V_out_st)
 
-        self.set_this_cycle(V_out_exp, g_soma * DeltaT*exp_approx((V_out_st - VT) / DeltaT))
+        self.set_this_cycle(
+            V_out_exp, g_soma * DeltaT * exp_approx((V_out_st - VT) / DeltaT)
+        )
         self.set_this_cycle(V_out_lin, V_out_st)
         self.set_this_cycle(V_out_I, I_in)
         self.set_this_cycle(digital_sel_out, digital_sel)
