@@ -9,7 +9,7 @@ module tb;
 // I/O definition
 `MAKE_CONST_REAL(30e-12, I_in);
 `MAKE_REAL(V_out, 1000);
-`MAKE_REAL(V_exp_out, 1e-6);
+`MAKE_REAL(V_exp_out, 1e-4);
 `MAKE_REAL(V_out_lin, 1000);
 `MAKE_REAL(V_out_I, 1000);
 `MAKE_REAL(V_out_I_mult, 1000);
