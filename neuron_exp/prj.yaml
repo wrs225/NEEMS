@@ -1,0 +1,18 @@
+PROJECT:
+    dt:                 10e-6
+
+
+CPU_TARGET:
+
+
+    sim:
+        tstop:          40e-3
+    
+ 
+    defines:
+      SHORT_WIDTH_REAL:
+        name: SHORT_WIDTH_REAL
+        value: 200  # or any value
+      LONG_WIDTH_REAL:
+        name: LONG_WIDTH_REAL
+        value: 200  # or any value

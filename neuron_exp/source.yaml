@@ -1,0 +1,7 @@
+    defines:
+      SHORT_WIDTH_REAL:
+        name: SHORT_WIDTH_REAL
+        value: 64  # or any value
+      LONG_WIDTH_REAL:
+        name: LONG_WIDTH_REAL
+        value: 64  # or any value

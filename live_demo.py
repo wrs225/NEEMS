@@ -33,6 +33,7 @@ button.on_clicked(stop)
 while plotting:
     v_out = ctrl.get_param("v_out_probe")
     t = ctrl.get_emu_time()
+
     ctrl.sleep_emu(1e-4)
 
     # Add data to lists and update plot
@@ -40,7 +41,7 @@ while plotting:
     y.append(v_out)
     ax.plot(x, y, color="b")
     plt.draw()
-    plt.pause(1e-5)
+    plt.pause(0.5e-4)
 
 # Keep the plot open at the end
 plt.ioff()

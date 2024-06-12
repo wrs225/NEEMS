@@ -2,6 +2,9 @@ analog_probes:
     i_in_probe:
         abspath:    'tb_i.I_in'
         range:       0.000006
+    v_out_probe:
+        abspath:    'tb_i.V_out'
+        range:      1000
     v_out_exp_probe:
         abspath:    'tb_i.V_exp_out'
         range:      0.00000000000030
@@ -17,10 +20,6 @@ analog_probes:
     dv_out_probe:
         abspath:    'tb_i.dv_out'
         range:      0.0000001
-analog_ctrl_outputs:
-    v_out_probe:
-        abspath:    'tb_i.V_out'
-        range:      1000
 digital_probes:
     digital_sel_probe:
         abspath:    'tb_i.digital_sel_out'
